@@ -1,0 +1,117 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$theme-colors: ("gold":#DDB65B,"blue":#14274E);
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(221, 182, 91)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 2.5em;
+    height: 2.5em;
+}
+.navbar-toggler {
+    margin: auto;
+}
+    
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@mixin shadow-bottom {
+	box-shadow: 0px 15px 10px -15px #111;
+}
+body {
+    font-family: 'Old Standard TT', serif;
+    font-size: 100%;  
+}
+a{
+    text-decoration: none;
+}
+p {
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 70em) {
+ body {
+      font-size: 80%;
+   }
+   .divider img {
+        width: 90%;
+   }
+}
+
+.logoChampignon {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid map-get($theme-colors, "gold" );
+}
+.nav-link {
+    color:map-get($theme-colors, "gold" );
+}
+picture img {
+  max-width: 100%;
+  height: auto;
+}
+.bg-section {
+    background-image:url("../../images/elements/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    h2 {
+        font-size: 4rem;
+        letter-spacing: 2px;
+    }
+    .qui {
+        padding: 2em 2em 5em 5em;
+        &-p {
+            text-align: justify;
+        }
+    } 
+}
+.bg-text {
+    background-color: lighten(map-get($theme-colors, "gold" ), 20%);
+    padding: 5px 10px 5px 2px;
+    border-radius: 5px;
+}
+.section-espece {
+    padding: 0 5em;
+    picture .espece{
+        border-radius: 20px;
+        @include shadow-bottom;
+    }
+    .space {
+        margin-top: 4em;
+    }
+}
+.section-recettes{
+    padding: 0 5em;
+    img{
+        @include shadow-bottom;
+    }
+}
+.link-recettes{
+    border-radius: 12%;
+    transition: 0.25s;
+    transition-timing-function: ease-out;
+    &:hover {
+        transform: scale(1.1);
+        transition: 0.25s;
+        transition-timing-function: ease-in;
+    }
+}
+.section-partenaire{
+    padding: 5em;
+    img{
+        @include shadow-bottom;
+        border-radius: 50%;
+        transition: 0.25s;
+        transition-timing-function: ease-out;
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.25s;
+            transition-timing-function: ease-in;
+        }
+    }
+}
+footer {
+    padding:2em 5em;
+}
