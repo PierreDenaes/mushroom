@@ -4,12 +4,18 @@
   "description": "dev package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "purgecss --css styles/css/style.css --content index.html --out styles/css/outCss",
+    "minify": "css-minify --dir styles/css/outCss --output styles/css/cssMin"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "css-minify": "^2.0.0",
     "sass": "^1.58.0"
+  },
+  "devDependencies": {
+    "purgecss": "^5.0.0"
   }
 }
